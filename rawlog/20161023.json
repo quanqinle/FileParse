@@ -1,0 +1,1060 @@
+{
+  "time_result_versions": [
+    "4.5.1",
+    "4.8.1",
+    "4.8.0",
+    "4.3.8",
+    "4.6.2",
+    "4.8.6",
+    "4.3.6",
+    "4.8.5",
+    "4.4.1",
+    "unknown",
+    "4.6.1",
+    "4.0.1"
+  ],
+  "time_results": [
+    {
+      "rconfig": {
+        "version": "4.8.1"
+      },
+      "avg": 97,
+      "count": 3961402,
+      "invalideCount": 116933
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.activity.HomeActivity"
+      },
+      "avg": 107,
+      "count": 753752,
+      "invalideCount": 9082
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.module.productdetail.PdtDetailActivity"
+      },
+      "avg": 237,
+      "count": 401952,
+      "invalideCount": 49134
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.martshow.brand.MartshowBrandActivity"
+      },
+      "avg": 261,
+      "count": 115893,
+      "invalideCount": 26181
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.tuan.tuan.activity.LimitActivity"
+      },
+      "avg": 128,
+      "count": 175007,
+      "invalideCount": 6297
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.activity.WebViewActivity"
+      },
+      "avg": 82,
+      "count": 193942,
+      "invalideCount": 3537
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.order.activity.OrderListActivity"
+      },
+      "avg": 65,
+      "count": 201418,
+      "invalideCount": 474
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.activity.SplashActivity"
+      },
+      "avg": 20,
+      "count": 444804,
+      "invalideCount": 2965
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.search.activity.SearchResultActivity"
+      },
+      "avg": 145,
+      "count": 123660,
+      "invalideCount": 5661
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.activity.DisplayImageActivity"
+      },
+      "avg": 60,
+      "count": 104939,
+      "invalideCount": 1056
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.search.activity.SearchHomeActivity"
+      },
+      "avg": 48,
+      "count": 103261,
+      "invalideCount": 681
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.order.activity.ShipmentActivity"
+      },
+      "avg": 46,
+      "count": 118357,
+      "invalideCount": 162
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.order.activity.OrderDetailActivity"
+      },
+      "avg": 49,
+      "count": 59003,
+      "invalideCount": 196
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.search.activity.SearchInputActivity"
+      },
+      "avg": 73,
+      "count": 78627,
+      "invalideCount": 591
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.trade.pay.activity.PayActivity"
+      },
+      "avg": 71,
+      "count": 82874,
+      "invalideCount": 748
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.toutiao.activity.ToutiaoArticleDetailsActivity"
+      },
+      "avg": 135,
+      "count": 12278,
+      "invalideCount": 614
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.c2c.messagecenter.C2CMessageCenterActivity"
+      },
+      "avg": 50,
+      "count": 30625,
+      "invalideCount": 229
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.tuan.bargain.ui.BargainActivity"
+      },
+      "avg": 107,
+      "count": 16226,
+      "invalideCount": 386
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.shop.activity.BrandHomeActivity"
+      },
+      "avg": 154,
+      "count": 18973,
+      "invalideCount": 1229
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.c2c.activity.C2CHomeActivity"
+      },
+      "avg": 139,
+      "count": 15203,
+      "invalideCount": 378
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.tuan.martgroup.activity.NewMartGroupActivity"
+      },
+      "avg": 147,
+      "count": 14136,
+      "invalideCount": 412
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.toutiao.activity.ToutiaoHomeActivity"
+      },
+      "avg": 83,
+      "count": 11752,
+      "invalideCount": 106
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.trade.cart.CartActivity"
+      },
+      "avg": 102,
+      "count": 31501,
+      "invalideCount": 842
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.c2c.activity.C2CMomentDetailActivity"
+      },
+      "avg": 172,
+      "count": 9049,
+      "invalideCount": 296
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.member.messagecenter.activity.C2CSystemMessageActivity"
+      },
+      "avg": 33,
+      "count": 21152,
+      "invalideCount": 121
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.pintuan.activity.FightDetailNewActivity"
+      },
+      "avg": 87,
+      "count": 32927,
+      "invalideCount": 465
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.member.shellandmoney.ShellAndMoneyActivity"
+      },
+      "avg": 35,
+      "count": 17270,
+      "invalideCount": 55
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.order.rating.RatingActivity"
+      },
+      "avg": 75,
+      "count": 28271,
+      "invalideCount": 79
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.activity.ImageWebViewBrowserActivity"
+      },
+      "avg": 60,
+      "count": 21026,
+      "invalideCount": 234
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.martshow.brand.BrandActivityReco"
+      },
+      "avg": 235,
+      "count": 9466,
+      "invalideCount": 1159
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.activity.SplashAdsActivity"
+      },
+      "avg": 28,
+      "count": 8280,
+      "invalideCount": 48
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.mine.collect.MyCollectionActivity"
+      },
+      "avg": 86,
+      "count": 8978,
+      "invalideCount": 80
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.member.messagecenter.activity.MessageDetailActivity"
+      },
+      "avg": 41,
+      "count": 12170,
+      "invalideCount": 44
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.order.rating.EvlauateActivity"
+      },
+      "avg": 38,
+      "count": 23326,
+      "invalideCount": 48
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.member.shake.activity.ShakeActivity"
+      },
+      "avg": 111,
+      "count": 16716,
+      "invalideCount": 50
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.activity.PersistWebViewActivity"
+      },
+      "avg": 70,
+      "count": 7693,
+      "invalideCount": 76
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.member.setting.activity.NewSettingActivity"
+      },
+      "avg": 49,
+      "count": 8413,
+      "invalideCount": 23
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.member.login.activity.LoginActivity"
+      },
+      "avg": 87,
+      "count": 13570,
+      "invalideCount": 323
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.member.cashandcoupon.CashAndCouponActivity"
+      },
+      "avg": 46,
+      "count": 18986,
+      "invalideCount": 63
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.martshow.subpage.BrandSecondPageActivity"
+      },
+      "avg": 125,
+      "count": 13566,
+      "invalideCount": 248
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "beibei.oversea.module.milkdiaper.view.MilkDiaperActivity"
+      },
+      "avg": 81,
+      "count": 4908,
+      "invalideCount": 29
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.oversea.activitys.OverseaBrandActivity"
+      },
+      "avg": 95,
+      "count": 9531,
+      "invalideCount": 142
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.activity.SearchFavorActivity"
+      },
+      "avg": 67,
+      "count": 5037,
+      "invalideCount": 62
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.member.messagecenter.activity.PromotionActivity"
+      },
+      "avg": 28,
+      "count": 4337,
+      "invalideCount": 115
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.aftersale.activity.AfterSaleApplyActivity"
+      },
+      "avg": 69,
+      "count": 7846,
+      "invalideCount": 27
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.pintuan.activity.MyFightActivity"
+      },
+      "avg": 40,
+      "count": 9120,
+      "invalideCount": 13
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.martshow.subpage.BrandSubPageActivity"
+      },
+      "avg": 48,
+      "count": 2879,
+      "invalideCount": 48
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.aftersale.activity.AfterSaleDetailActivity"
+      },
+      "avg": 37,
+      "count": 10688,
+      "invalideCount": 16
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.forum.home.ForumHomeActivity"
+      },
+      "avg": 94,
+      "count": 2872,
+      "invalideCount": 43
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.c2c.activity.C2CProfileSelfActivity"
+      },
+      "avg": 123,
+      "count": 3056,
+      "invalideCount": 74
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "page": "com.husor.beibei.c2c.activity.C2CMyShopActivity"
+      },
+      "avg": 31,
+      "count": 969,
+      "invalideCount": 1
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "device_model": "MI 4LTE"
+      },
+      "avg": 88,
+      "count": 75095,
+      "invalideCount": 1635
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "device_model": "HM 1S"
+      },
+      "avg": 145,
+      "count": 13440,
+      "invalideCount": 865
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "device_model": "OPPO R9m"
+      },
+      "avg": 67,
+      "count": 205216,
+      "invalideCount": 2425
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "device_model": "vivo X7"
+      },
+      "avg": 55,
+      "count": 77208,
+      "invalideCount": 727
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "device_model": "Redmi Note 3"
+      },
+      "avg": 79,
+      "count": 65969,
+      "invalideCount": 1203
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "device_model": "GT-N7100"
+      },
+      "avg": 166,
+      "count": 4658,
+      "invalideCount": 347
+    },
+    {
+      "rconfig": {
+        "version": "4.8.1",
+        "device_model": "SCL-TL00"
+      },
+      "avg": 112,
+      "count": 17406,
+      "invalideCount": 439
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6"
+      },
+      "avg": 95,
+      "count": 14908088,
+      "invalideCount": 721082
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.activity.HomeActivity"
+      },
+      "avg": 113,
+      "count": 2947054,
+      "invalideCount": 113681
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.module.productdetail.PdtDetailActivity"
+      },
+      "avg": 226,
+      "count": 1727065,
+      "invalideCount": 207776
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.martshow.brand.MartshowBrandActivity"
+      },
+      "avg": 197,
+      "count": 515249,
+      "invalideCount": 63372
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.tuan.tuan.activity.LimitActivity"
+      },
+      "avg": 113,
+      "count": 698649,
+      "invalideCount": 31736
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.activity.WebViewActivity"
+      },
+      "avg": 71,
+      "count": 832162,
+      "invalideCount": 35539
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.order.activity.OrderListActivity"
+      },
+      "avg": 56,
+      "count": 905920,
+      "invalideCount": 13038
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.activity.SplashActivity"
+      },
+      "avg": 19,
+      "count": 1695557,
+      "invalideCount": 68613
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.search.activity.SearchResultActivity"
+      },
+      "avg": 128,
+      "count": 480436,
+      "invalideCount": 30908
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.activity.DisplayImageActivity"
+      },
+      "avg": 55,
+      "count": 455993,
+      "invalideCount": 11567
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.search.activity.SearchHomeActivity"
+      },
+      "avg": 43,
+      "count": 393212,
+      "invalideCount": 15255
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.order.activity.ShipmentActivity"
+      },
+      "avg": 40,
+      "count": 549591,
+      "invalideCount": 6167
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.order.activity.OrderDetailActivity"
+      },
+      "avg": 42,
+      "count": 268517,
+      "invalideCount": 3188
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.search.activity.SearchInputActivity"
+      },
+      "avg": 63,
+      "count": 297619,
+      "invalideCount": 11774
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.trade.pay.activity.PayActivity"
+      },
+      "avg": 63,
+      "count": 385033,
+      "invalideCount": 5166
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.toutiao.activity.ToutiaoArticleDetailsActivity"
+      },
+      "avg": 117,
+      "count": 55781,
+      "invalideCount": 2754
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.c2c.messagecenter.C2CMessageCenterActivity"
+      },
+      "avg": 43,
+      "count": 157543,
+      "invalideCount": 4714
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.tuan.bargain.ui.BargainActivity"
+      },
+      "avg": 91,
+      "count": 64460,
+      "invalideCount": 2689
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.shop.activity.BrandHomeActivity"
+      },
+      "avg": 133,
+      "count": 90091,
+      "invalideCount": 4982
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.c2c.activity.C2CHomeActivity"
+      },
+      "avg": 130,
+      "count": 59371,
+      "invalideCount": 2575
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.tuan.martgroup.activity.NewMartGroupActivity"
+      },
+      "avg": 132,
+      "count": 64928,
+      "invalideCount": 2607
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.toutiao.activity.ToutiaoHomeActivity"
+      },
+      "avg": 72,
+      "count": 49014,
+      "invalideCount": 1100
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.trade.cart.CartActivity"
+      },
+      "avg": 91,
+      "count": 145323,
+      "invalideCount": 4940
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.c2c.activity.C2CMomentDetailActivity"
+      },
+      "avg": 157,
+      "count": 42038,
+      "invalideCount": 1843
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.member.messagecenter.activity.C2CSystemMessageActivity"
+      },
+      "avg": 28,
+      "count": 107341,
+      "invalideCount": 2863
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.pintuan.activity.FightDetailNewActivity"
+      },
+      "avg": 73,
+      "count": 167459,
+      "invalideCount": 2564
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.member.shellandmoney.ShellAndMoneyActivity"
+      },
+      "avg": 29,
+      "count": 75213,
+      "invalideCount": 1387
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.order.rating.RatingActivity"
+      },
+      "avg": 64,
+      "count": 120510,
+      "invalideCount": 2115
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.activity.ImageWebViewBrowserActivity"
+      },
+      "avg": 53,
+      "count": 86272,
+      "invalideCount": 2396
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.martshow.brand.BrandActivityReco"
+      },
+      "avg": 153,
+      "count": 43609,
+      "invalideCount": 2962
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.activity.SplashAdsActivity"
+      },
+      "avg": 30,
+      "count": 26595,
+      "invalideCount": 2019
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.mine.collect.MyCollectionActivity"
+      },
+      "avg": 73,
+      "count": 39588,
+      "invalideCount": 714
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.member.messagecenter.activity.MessageDetailActivity"
+      },
+      "avg": 35,
+      "count": 66851,
+      "invalideCount": 1415
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.order.rating.EvlauateActivity"
+      },
+      "avg": 32,
+      "count": 102728,
+      "invalideCount": 1659
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.member.shake.activity.ShakeActivity"
+      },
+      "avg": 96,
+      "count": 68847,
+      "invalideCount": 1133
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.activity.PersistWebViewActivity"
+      },
+      "avg": 56,
+      "count": 35747,
+      "invalideCount": 416
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.member.setting.activity.NewSettingActivity"
+      },
+      "avg": 35,
+      "count": 26738,
+      "invalideCount": 774
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.member.login.activity.LoginActivity"
+      },
+      "avg": 87,
+      "count": 108856,
+      "invalideCount": 3479
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.member.cashandcoupon.CashAndCouponActivity"
+      },
+      "avg": 42,
+      "count": 99594,
+      "invalideCount": 1371
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.martshow.subpage.BrandSecondPageActivity"
+      },
+      "avg": 115,
+      "count": 55246,
+      "invalideCount": 2821
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "beibei.oversea.module.milkdiaper.view.MilkDiaperActivity"
+      },
+      "avg": 74,
+      "count": 20351,
+      "invalideCount": 673
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.oversea.activitys.OverseaBrandActivity"
+      },
+      "avg": 81,
+      "count": 42025,
+      "invalideCount": 1505
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.activity.SearchFavorActivity"
+      },
+      "avg": 57,
+      "count": 20249,
+      "invalideCount": 522
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.member.messagecenter.activity.PromotionActivity"
+      },
+      "avg": 24,
+      "count": 24810,
+      "invalideCount": 1501
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.aftersale.activity.AfterSaleApplyActivity"
+      },
+      "avg": 59,
+      "count": 32371,
+      "invalideCount": 178
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.pintuan.activity.MyFightActivity"
+      },
+      "avg": 33,
+      "count": 38090,
+      "invalideCount": 443
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.martshow.subpage.BrandSubPageActivity"
+      },
+      "avg": 41,
+      "count": 11077,
+      "invalideCount": 606
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.aftersale.activity.AfterSaleDetailActivity"
+      },
+      "avg": 30,
+      "count": 42234,
+      "invalideCount": 408
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.forum.home.ForumHomeActivity"
+      },
+      "avg": 79,
+      "count": 13587,
+      "invalideCount": 494
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.c2c.activity.C2CProfileSelfActivity"
+      },
+      "avg": 104,
+      "count": 15314,
+      "invalideCount": 453
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "page": "com.husor.beibei.c2c.activity.C2CMyShopActivity"
+      },
+      "avg": 26,
+      "count": 6550,
+      "invalideCount": 76
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "device_model": "MI 4LTE"
+      },
+      "avg": 89,
+      "count": 319141,
+      "invalideCount": 14319
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "device_model": "HM 1S"
+      },
+      "avg": 166,
+      "count": 33053,
+      "invalideCount": 2862
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "device_model": "OPPO R9m"
+      },
+      "avg": 71,
+      "count": 638820,
+      "invalideCount": 23934
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "device_model": "vivo X7"
+      },
+      "avg": 53,
+      "count": 748731,
+      "invalideCount": 27446
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "device_model": "Redmi Note 3"
+      },
+      "avg": 78,
+      "count": 279418,
+      "invalideCount": 11781
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "device_model": "GT-N7100"
+      },
+      "avg": 193,
+      "count": 8700,
+      "invalideCount": 807
+    },
+    {
+      "rconfig": {
+        "version": "4.8.6",
+        "device_model": "SCL-TL00"
+      },
+      "avg": 118,
+      "count": 41978,
+      "invalideCount": 1463
+    }
+  ]
+}
