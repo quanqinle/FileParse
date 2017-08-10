@@ -1,3 +1,7 @@
+/log
+.classpath
+.project
+
 #----java
 # Compiled class file
 *.class

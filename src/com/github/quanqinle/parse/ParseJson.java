@@ -23,17 +23,19 @@ public class ParseJson {
 	}
 
 	/**
-	 * 解析每日掉帧数json。<BR>
+	 * 解析每日掉帧数Json<BR>
+	 * 
 	 * @param filename
 	 */
 	public static void skippedFrame(String filename) {
 
 		String file = String.join(File.separator, Constant.RAW_FILE_DIR, filename);
-		List<String> strJson = FileUtil.readFileByLines(file);
-
+		List<String> strsJson = FileUtil.readFileByLines(file);
+		String str = String.join(" ", strsJson); // list to string
+		
 		LogUtil.info("version,page,model,avg,count,invalidCount");
 
-		for (String str : strJson) {
+//		for (String str : strsJson) {
 			SkippedFrame skippedFrame = JSON.parseObject(str, SkippedFrame.class);
 			List<TimeResults> timeResults = skippedFrame.getTime_results();
 			for (TimeResults result : timeResults) {
@@ -47,7 +49,7 @@ public class ParseJson {
 				String log = String.join(",", version,page,model,avg,count,invalidCount);
 				LogUtil.info(log);
 			}
-		}
+//		}
 	}
 
 }
