@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -180,8 +181,7 @@ public class ExcelReadHelper {
 	 * 				需要设置的值	
 	 * @throws Exception 
 	 */
-	private static void setObjectPropertyValue(Object obj, Field field,
-			Method method, String value) throws Exception {
+	private static void setObjectPropertyValue(Object obj, Field field,	Method method, String value) throws Exception {
 		Object[] oo = new Object[1];
 
 		String type = field.getType().getName();
@@ -226,11 +226,10 @@ public class ExcelReadHelper {
 		}
 	}
 
-	@SuppressWarnings("static-access")
 	private static String getValue(Cell cell) {  
-        if (cell.getCellType() == cell.CELL_TYPE_BOOLEAN) {  
+        if (cell.getCellTypeEnum() == CellType.BOOLEAN) {  
             return String.valueOf(cell.getBooleanCellValue());  
-        } else if (cell.getCellType() == cell.CELL_TYPE_NUMERIC) {
+        } else if (cell.getCellTypeEnum() == CellType.NUMERIC) {
             return NumberToTextConverter.toText(cell.getNumericCellValue());  
         } else {  
             return String.valueOf(cell.getStringCellValue());  
