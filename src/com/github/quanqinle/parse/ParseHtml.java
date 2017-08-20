@@ -12,7 +12,8 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * 解析html的demo
+ * 解析html的demo<br>
+ *     https://github.com/jhy/jsoup
  *
  * @author qinle.quan
  */
@@ -26,10 +27,11 @@ public class ParseHtml {
     private static String genAGOT() {
         String strResult = "";
         String url = "http://readclassical.github.io/novel/A-Game-of-Thrones-{index}.html";
+        int maxIndex = 73; //max index in url
         Document doc;
         Element body;
-        String line;
-        for (int i = 1; i <= 73; i++) {
+
+        for (int i = 1; i <= maxIndex; i++) {
             try {
                 doc = Jsoup.connect(url.replace("{index}", String.valueOf(i))).get();
                 body = doc.body();
@@ -41,9 +43,10 @@ public class ParseHtml {
                 int maxLineNum = originSize > translateSize ? originSize : translateSize;
 
                 for (int j = 0; j < maxLineNum; j++) {
+                    String line;
                     if (originSize >= j) {
                         line = origins.get(j).text();
-                         if (0 == j) { // new chapter add one more null line
+                         if (0 == j) { // add one more null line in new chapter
                             line = '\n' + line;
                         }
                         strResult = new StringBuffer(strResult).append(line).append('\n').toString();
@@ -52,9 +55,7 @@ public class ParseHtml {
                         line = translates.get(j).text();
                         strResult = new StringBuffer(strResult).append(line).append('\n').toString();
                     }
-
                 }
-
             } catch (IOException e) {
                 LogUtil.info(String.format("error on cha[%s]", i));
                 e.printStackTrace();
