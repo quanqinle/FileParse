@@ -55,6 +55,12 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>3.17-beta1</version>
 		</dependency>
+		<dependency>
+			<!-- jsoup HTML parser library @ https://jsoup.org/ -->
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.10.3</version>
+		</dependency>
 
 	</dependencies>
 

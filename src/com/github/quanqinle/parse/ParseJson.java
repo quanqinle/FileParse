@@ -14,42 +14,41 @@ import com.github.quanqinle.util.LogUtil;
  * 解析json的demo
  *
  * @author qinle.quan
- *
  */
 public class ParseJson {
 
-	public static void main(String[] args) {
-		skippedFrame("20161023.json");
-	}
+    public static void main(String[] args) {
+        skippedFrame("20161023.json");
+    }
 
-	/**
-	 * 解析每日掉帧数Json<BR>
-	 * 
-	 * @param filename
-	 */
-	public static void skippedFrame(String filename) {
+    /**
+     * 解析每日掉帧数Json<BR>
+     *
+     * @param filename
+     */
+    public static void skippedFrame(String filename) {
 
-		String file = String.join(File.separator, Constant.RAW_FILE_DIR, filename);
-		List<String> strsJson = FileUtil.readFileByLines(file);
-		String str = String.join(" ", strsJson); // list to string
-		
-		LogUtil.info("version,page,model,avg,count,invalidCount");
+        String file = String.join(File.separator, Constant.RAW_FILE_DIR, filename);
+        List<String> strsJson = FileUtil.readFileByLines(file);
+        String str = String.join(" ", strsJson); // list to string
+
+        LogUtil.info("version,page,model,avg,count,invalidCount");
 
 //		for (String str : strsJson) {
-			SkippedFrame skippedFrame = JSON.parseObject(str, SkippedFrame.class);
-			List<TimeResults> timeResults = skippedFrame.getTime_results();
-			for (TimeResults result : timeResults) {
-				String version = result.getRconfig().getVersion();
-				String page = result.getRconfig().getPage();
-				String model = result.getRconfig().getDevice_model();
+        SkippedFrame skippedFrame = JSON.parseObject(str, SkippedFrame.class);
+        List<TimeResults> timeResults = skippedFrame.getTime_results();
+        for (TimeResults result : timeResults) {
+            String version = result.getRconfig().getVersion();
+            String page = result.getRconfig().getPage();
+            String model = result.getRconfig().getDevice_model();
 
-				String avg = result.getAvg() + "";
-				String count = result.getCount() + "";
-				String invalidCount = result.getInvalideCount() + "";
-				String log = String.join(",", version,page,model,avg,count,invalidCount);
-				LogUtil.info(log);
-			}
+            String avg = result.getAvg() + "";
+            String count = result.getCount() + "";
+            String invalidCount = result.getInvalideCount() + "";
+            String log = String.join(",", version, page, model, avg, count, invalidCount);
+            LogUtil.info(log);
+        }
 //		}
-	}
+    }
 
 }
