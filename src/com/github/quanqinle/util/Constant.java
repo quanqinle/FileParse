@@ -9,5 +9,5 @@ public final class Constant {
 
     public static final String ROOT = System.getProperty("user.dir");
 
-    public static final String RAW_FILE_DIR = "rawlog";
+    public static final String RAW_FILE_DIR = "rawfile";
 }

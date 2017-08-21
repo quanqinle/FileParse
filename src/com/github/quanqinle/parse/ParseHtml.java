@@ -9,7 +9,6 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.File;
-import java.io.IOException;
 
 /**
  * 解析html的demo<br>
@@ -27,13 +26,15 @@ public class ParseHtml {
     private static String genAGOT() {
         String strResult = "";
         String url = "http://readclassical.github.io/novel/A-Game-of-Thrones-{index}.html";
-        int maxIndex = 73; //max index in url
+        int maxIndex = 3; //max index in url
         Document doc;
         Element body;
 
         for (int i = 1; i <= maxIndex; i++) {
             try {
                 doc = Jsoup.connect(url.replace("{index}", String.valueOf(i))).get();
+                LogUtil.info(String.format("connected index[%d]", i));
+
                 body = doc.body();
                 Elements origins = body.getElementsByTag("origin");
                 Elements translates = body.getElementsByTag("translate");
@@ -56,8 +57,8 @@ public class ParseHtml {
                         strResult = new StringBuffer(strResult).append(line).append('\n').toString();
                     }
                 }
-            } catch (IOException e) {
-                LogUtil.info(String.format("error on cha[%s]", i));
+            } catch (Exception e) {
+                LogUtil.error(String.format("error at index[%s]", i));
                 e.printStackTrace();
             }
         }

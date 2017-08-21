@@ -1,5 +1,9 @@
 package com.github.quanqinle.util;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+//import org.apache.log4j.Logger;
+
 /**
  * 日志输出代理类。
  * <p>
@@ -59,7 +63,7 @@ public class LogUtil {
     /**
      * 默认输出日志的日志工具：log4j
      */
-    private static org.apache.log4j.Logger logger = null;
+    private static Logger logger = null;
 
     public LogUtil() {
     }
@@ -69,7 +73,8 @@ public class LogUtil {
         // org.apache.log4j.PropertyConfigurator.configure("log4j.properties");
         // 得到logger实例，作为输出工具。
         // 此句作用是用一个输出实例，取代每个类里面的： Logger.getLogger(X.class)
-        logger = org.apache.log4j.Logger.getLogger("");
+//        logger = Logger.getLogger("");  // log4j 1.x
+        logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME); // log4j 2.x
     }
 
     /**
