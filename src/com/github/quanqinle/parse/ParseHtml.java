@@ -58,6 +58,7 @@ public class ParseHtml {
                     }
                 }
             } catch (Exception e) {
+                strResult = new StringBuffer(strResult).append(String.format("error at index[%s]", i)).append('\n').toString();
                 LogUtil.error(String.format("error at index[%s]", i));
                 e.printStackTrace();
             }
