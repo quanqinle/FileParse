@@ -20,7 +20,6 @@ import org.apache.poi.ss.util.NumberToTextConverter;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-
 /**
  * 解析Excel，支持2003、2007<br>
  * https://github.com/chenssy89/jutils/
@@ -70,7 +69,7 @@ public class ExcelReadHelper {
      * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;excel：编号    姓名         年龄       性别<br>
      * properties：id  name  age  sex<br>
      *
-     * @param file       待解析的Excel文件的路径
+     * @param filePath   待解析的Excel文件的路径
      * @param properties 与Excel相对应的属性
      * @param obj        反射对象的Class
      * @return
@@ -92,7 +91,7 @@ public class ExcelReadHelper {
      *
      * @param book       WorkBook对象，他代表了待将解析的Excel文件
      * @param properties 需要参考Object的属性
-     * @param object     构建的Object对象，每一个row都相当于一个object对象
+     * @param obj        构建的Object对象，每一个row都相当于一个object对象
      * @return
      * @throws Exception
      * @autor:chenssy

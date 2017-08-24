@@ -26,7 +26,7 @@ public class ParseHtml {
     private static String genAGOT() {
         String strResult = "";
         String url = "http://readclassical.github.io/novel/A-Game-of-Thrones-{index}.html";
-        int maxIndex = 3; //max index in url
+        int maxIndex = 73; //max index in url
         Document doc;
         Element body;
 
