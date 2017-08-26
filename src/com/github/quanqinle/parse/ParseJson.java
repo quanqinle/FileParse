@@ -4,8 +4,8 @@ import java.io.File;
 import java.util.List;
 
 import com.alibaba.fastjson.JSON;
-import com.github.quanqinle.entity.AndroidSkippedFrame.SkippedFrame;
-import com.github.quanqinle.entity.AndroidSkippedFrame.TimeResults;
+import com.github.quanqinle.entity.jsonentity.SkippedFrame;
+import com.github.quanqinle.entity.jsonentity.TimeResults;
 import com.github.quanqinle.util.Constant;
 import com.github.quanqinle.util.FileUtil;
 import com.github.quanqinle.util.LogUtil;

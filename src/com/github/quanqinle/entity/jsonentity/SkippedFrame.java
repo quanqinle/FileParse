@@ -1,4 +1,4 @@
-package com.github.quanqinle.entity.AndroidSkippedFrame;
+package com.github.quanqinle.entity.jsonentity;
 
 import java.util.ArrayList;
 import java.util.List;

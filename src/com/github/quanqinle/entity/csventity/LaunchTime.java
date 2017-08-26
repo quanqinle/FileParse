@@ -1,4 +1,4 @@
-package com.github.quanqinle.entity.AndroidLaunch;
+package com.github.quanqinle.entity.csventity;
 
 public class LaunchTime {
 

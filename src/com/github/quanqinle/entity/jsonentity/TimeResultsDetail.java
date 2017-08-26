@@ -1,4 +1,4 @@
-package com.github.quanqinle.entity.AndroidSkippedFrame;
+package com.github.quanqinle.entity.jsonentity;
 
 public class TimeResultsDetail {
 
