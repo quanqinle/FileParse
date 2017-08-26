@@ -25,6 +25,14 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  */
 public class ReadExcel {
 
+    public static void main(String[] args) {
+        try {
+            readExcel(new File("D:\\test.xlsx"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static List<List<Object>> readExcel(File file) throws IOException {
         Workbook workbook = null;
         try {
@@ -100,13 +108,4 @@ public class ReadExcel {
         return list;
     }
 
-
-    public static void main(String[] args) {
-        try {
-            readExcel(new File("D:\\test.xlsx"));
-            // readExcel(new File("D:\\test.xls"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }

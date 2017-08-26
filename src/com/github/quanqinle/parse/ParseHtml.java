@@ -12,7 +12,7 @@ import java.io.File;
 
 /**
  * 解析html的demo<br>
- *     https://github.com/jhy/jsoup
+ * 依赖库 https://github.com/jhy/jsoup
  *
  * @author qinle.quan
  */
@@ -23,6 +23,10 @@ public class ParseHtml {
         FileIOUtils.writeFileFromString(file, genAGOT());
     }
 
+    /**
+     * 从网站解析并保存一本书
+     * @return
+     */
     private static String genAGOT() {
         String strResult = "";
         String url = "http://readclassical.github.io/novel/A-Game-of-Thrones-{index}.html";

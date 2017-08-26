@@ -22,6 +22,8 @@ public class ParseText {
     }
 
     /**
+     * 处理文件内容，删除不恰当的换行
+     *
      * @param filename
      */
     public static String trimTrailings(String filename) {
@@ -34,17 +36,16 @@ public class ParseText {
                     continue;
                 }
 
-                strResult += handleEndChar(line);
-            } /*else if (line.isEmpty()) {
-                strResult += line;
-            }*/
+                strResult = new String(strResult).concat(handleEndChar(line));
+//                strResult += handleEndChar(line); // low efficient
+            }
         }
         return strResult;
     }
 
     /**
-     * 处理改行是否需要换行<br>
-     * 仅适用于英文
+     * 处理该行是否需要换行<br>
+     * 当前仅适用于英文
      *
      * @param line
      * @return
