@@ -1,15 +1,37 @@
-package com.github.quanqinle.entity;
+package com.github.quanqinle.entity.excelentity;
 
 import javax.xml.crypto.Data;
+import java.util.HashMap;
+import java.util.Map;
 
+/**
+ *
+ */
 public class ExcelDemo {
-    int id;
-    String name;
-    int age;
-    Data birthday;
-    double salary;
-    String happy;
-    Data creattime;
+    private int id;
+    private String name;
+    private int age;
+    private Data birthday;
+    private double salary;
+    private String happy;
+    private Data creattime;
+
+    private static final Map<String, String> headerRow;
+
+    static {
+        headerRow = new HashMap<String, String>();
+        headerRow.put("id", "id");
+        headerRow.put("姓名", "name");
+        headerRow.put("年龄", "age");
+        headerRow.put("生日", "birthday");
+        headerRow.put("收入", "salary");
+        headerRow.put("是否幸福", "happy");
+        headerRow.put("创建日期", "creattime");
+    }
+
+    public static Map<String, String> getHeaderRow() {
+        return headerRow;
+    }
 
     public int getId() {
         return id;
@@ -71,4 +93,5 @@ public class ExcelDemo {
     public String toString() {
         return String.join(", ", String.valueOf(this.getId()), this.getName(), String.valueOf(this.getAge()), this.getBirthday().toString(), String.valueOf(this.getSalary()), this.getHappy(), this.getCreattime().toString());
     }
+
 }

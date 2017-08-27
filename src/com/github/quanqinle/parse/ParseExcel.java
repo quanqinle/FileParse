@@ -8,9 +8,9 @@ import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.github.quanqinle.entity.ExcelDemo;
+import com.github.quanqinle.entity.excelentity.ExcelDemo;
 import com.github.quanqinle.util.Constant;
-import com.github.quanqinle.util.ExcelReadHelper;
+import com.github.quanqinle.util.ReadExcel;
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.hssf.usermodel.HSSFFont;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -55,13 +55,13 @@ public class ParseExcel {
      * @param filePath
      */
     public static void readExcel2Obj(String filePath) {
-        String[] properties = {"id", "name", "age", "birthday", "salary", "happy", "creattime"};
         try {
-            List<Object> list = ExcelReadHelper.excelRead(filePath, properties, ExcelDemo.class);
-            System.out.println("list size=" + list.size());
+            List<Object> list = ReadExcel.excelRead(filePath, ExcelDemo.class, ExcelDemo.getHeaderRow());
+            System.out.println("row size=" + list.size());
+
             for (int i = 0; i <= list.size(); i++) {
                 ExcelDemo demo = (ExcelDemo) list.get(i);
-                System.out.println("row:" + i + " conent:" + demo.toString());
+//                System.out.println("row:" + i + " conent:" + demo.toString());
                 System.out.print(demo.getId() + " ");
                 System.out.print(demo.getName() + " ");
                 System.out.print(demo.getAge() + " ");
@@ -193,7 +193,8 @@ public class ParseExcel {
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 格式化日期字符串
 
                 String cellType;
-                String dataFormat = cell.getCellStyle().getDataFormatString();;
+                String dataFormat = cell.getCellStyle().getDataFormatString();
+                ;
                 switch (cell.getCellTypeEnum()) {
                     case STRING:
                         cellType = "String";

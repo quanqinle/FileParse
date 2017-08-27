@@ -25,6 +25,7 @@ public class ParseHtml {
 
     /**
      * 从网站解析并保存一本书
+     *
      * @return
      */
     private static String genAGOT() {
@@ -51,7 +52,7 @@ public class ParseHtml {
                     String line;
                     if (originSize >= j) {
                         line = origins.get(j).text();
-                         if (0 == j) { // add one more null line in new chapter
+                        if (0 == j) { // add one more null line in new chapter
                             line = '\n' + line;
                         }
                         strResult = new StringBuffer(strResult).append(line).append('\n').toString();
