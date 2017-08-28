@@ -2,6 +2,7 @@ package com.github.quanqinle.parse;
 
 import com.github.quanqinle.util.Constant;
 import com.github.quanqinle.util.FileIOUtils;
+import com.github.quanqinle.util.RegexUtils;
 import com.google.common.base.Strings;
 import org.apache.commons.lang3.math.NumberUtils;
 
@@ -17,8 +18,8 @@ import java.util.List;
 public class ParseText {
 
     public static void main(String[] args) {
-        String newFilePath = String.join(File.separator, Constant.RAW_FILE_DIR, "AnimalFarm-4.txt");
-        FileIOUtils.writeFileFromString(newFilePath, trimTrailings("AnimalFarm.txt"));
+        String newFilePath = String.join(File.separator, Constant.RAW_FILE_DIR, "Thirteen Reasons Why-3.txt");
+        FileIOUtils.writeFileFromString(newFilePath, trimTrailings("Thirteen Reasons Why.txt"));
     }
 
     /**
@@ -32,7 +33,9 @@ public class ParseText {
         String strResult = "";
         for (String line : strs) {
             if (!Strings.isNullOrEmpty(line)) {
-                if (NumberUtils.isDigits(line)) {
+                line = line.trim();
+
+                if (isPageHeaderFooter(line)) {
                     continue;
                 }
 
@@ -41,6 +44,23 @@ public class ParseText {
             }
         }
         return strResult;
+    }
+
+    /**
+     * 当前行是否页眉页脚
+     *
+     * @param line
+     * @return
+     */
+    private static boolean isPageHeaderFooter(String line) {
+        if (NumberUtils.isDigits(line)) {
+            return true;
+        }
+        if (RegexUtils.find(line, "^[pP]age[\\s0-9]*$")) {
+            System.out.println(line);
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -67,5 +87,12 @@ public class ParseText {
         }
 
         return line + " ";
+    }
+
+    private static String trimStartSpace(String textContent) {
+        while (textContent.startsWith("　")) {
+            textContent = textContent.substring(1, textContent.length()).trim();
+        }
+        return textContent;
     }
 }
