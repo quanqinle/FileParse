@@ -57,7 +57,7 @@ public class ParseText {
             return true;
         }
         if (RegexUtils.find(line, "^[pP]age[\\s0-9]*$")) {
-            System.out.println(line);
+//            System.out.println(line);
             return true;
         }
         return false;
@@ -75,7 +75,10 @@ public class ParseText {
         String[] romanNums = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX", "XXI", "XXII", "XXIII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII", "XXIX", "XXX", "XXXI", "XXXII", "XXXIII", "XXXIV", "XXXV", "XXXVI", "XXXVII", "XXXVIII", "XXXIX", "XL", "XLI", "XLII", "XLIII", "XLIV", "XLV", "XLVI", "XLVII", "XLVII", "XLIX", "L"};
         String[] punctuations = {".", "'", ":", "’"};
 
-        if (Arrays.asList(romanNums).contains(line)) {
+        // 段落处，增加换行
+        if (Arrays.asList(romanNums).contains(line)
+                || line.matches("[A-Z0-9: ]*")) { //例如"CASSETTE 1: SIDE A"
+//            System.out.println("quanql");
             return '\n' + line + '\n';
         }
 

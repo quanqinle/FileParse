@@ -27,8 +27,7 @@ public class RegexUtils {
     public static boolean find(String str, String regex) {
         Pattern p = Pattern.compile(regex);
         Matcher m = p.matcher(str);
-        boolean b = m.find();
-        return b;
+        return m.find();
     }
 
     /**
