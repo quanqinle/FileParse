@@ -1,32 +1,42 @@
 package com.github.quanqinle.entity.excelentity;
 
-import javax.xml.crypto.Data;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- *
+ * excel每行就是一个对象
  */
 public class ExcelDemo {
     private int id;
     private String name;
     private int age;
-    private Data birthday;
+    private Date birthday;
     private double salary;
     private String happy;
-    private Data creattime;
+    private Date createTime;
+
+    public Date getBedTime() {
+        return bedTime;
+    }
+
+    public void setBedTime(Date bedTime) {
+        this.bedTime = bedTime;
+    }
+
+    private Date bedTime;
 
     private static final Map<String, String> headerRow;
-
-    static {
-        headerRow = new HashMap<String, String>();
+    static { // 不限大小写
+        headerRow = new HashMap<>();
         headerRow.put("id", "id");
         headerRow.put("姓名", "name");
         headerRow.put("年龄", "age");
         headerRow.put("生日", "birthday");
         headerRow.put("收入", "salary");
         headerRow.put("是否幸福", "happy");
-        headerRow.put("创建日期", "creattime");
+        headerRow.put("创建日期", "createTime");
+        headerRow.put("睡觉时间", "bedTime");
     }
 
     public static Map<String, String> getHeaderRow() {
@@ -73,25 +83,25 @@ public class ExcelDemo {
         this.happy = happy;
     }
 
-    public Data getBirthday() {
+    public Date getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Data birthday) {
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 
-    public Data getCreattime() {
-        return creattime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreattime(Data creattime) {
-        this.creattime = creattime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     @Override
     public String toString() {
-        return String.join(", ", String.valueOf(this.getId()), this.getName(), String.valueOf(this.getAge()), this.getBirthday().toString(), String.valueOf(this.getSalary()), this.getHappy(), this.getCreattime().toString());
+        return String.join(", ", String.valueOf(this.getId()), this.getName(), String.valueOf(this.getAge()), this.getBirthday().toString(), String.valueOf(this.getSalary()), this.getHappy(), this.getCreateTime().toString());
     }
 
 }

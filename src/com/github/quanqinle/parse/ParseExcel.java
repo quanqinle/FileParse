@@ -34,7 +34,7 @@ public class ParseExcel {
         System.out.println("---- method readExcel2Obj() ----");
         readExcel2Obj(filePath);
 
-        System.out.println("---- method officialExample() ----");
+/*        System.out.println("---- method officialExample() ----");
         officialExample(filePath);
 
         try {
@@ -45,7 +45,7 @@ public class ParseExcel {
             }
         } catch (Exception e) {
 
-        }
+        }*/
 
     }
 
@@ -54,21 +54,21 @@ public class ParseExcel {
      *
      * @param filePath
      */
-    public static void readExcel2Obj(String filePath) {
+    private static void readExcel2Obj(String filePath) {
         try {
             List<Object> list = ReadExcel.excelRead(filePath, ExcelDemo.class, ExcelDemo.getHeaderRow());
-            System.out.println("row size=" + list.size());
+            System.out.println("\n\nrow size=" + list.size());
 
             for (int i = 0; i <= list.size(); i++) {
                 ExcelDemo demo = (ExcelDemo) list.get(i);
-//                System.out.println("row:" + i + " conent:" + demo.toString());
+//                System.out.println("row:" + i + " content:" + demo.toString());
                 System.out.print(demo.getId() + " ");
                 System.out.print(demo.getName() + " ");
                 System.out.print(demo.getAge() + " ");
                 System.out.print(demo.getBirthday() + " ");
                 System.out.print(demo.getSalary() + " ");
                 System.out.print(demo.getHappy() + " ");
-                System.out.println(demo.getCreattime());
+                System.out.println(demo.getCreateTime());
             }
         } catch (Exception e) {
         }
@@ -159,7 +159,7 @@ public class ParseExcel {
      * <p>
      * http://blog.csdn.net/evangel_z/article/details/7312050
      */
-    public static List<List<Object>> readExcelSheet1ThenPrint(String filePath) throws IOException {
+    private static List<List<Object>> readExcelSheet1ThenPrint(String filePath) throws IOException {
         Workbook workbook;
         try {
             workbook = new XSSFWorkbook(new FileInputStream(new File(filePath))); // xlsx
@@ -194,7 +194,7 @@ public class ParseExcel {
 
                 String cellType;
                 String dataFormat = cell.getCellStyle().getDataFormatString();
-                ;
+
                 switch (cell.getCellTypeEnum()) {
                     case STRING:
                         cellType = "String";
