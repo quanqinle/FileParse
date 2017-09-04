@@ -11,7 +11,6 @@ import java.util.List;
 import com.github.quanqinle.entity.excelentity.ExcelDemo;
 import com.github.quanqinle.util.Constant;
 import com.github.quanqinle.util.ReadExcel;
-import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.hssf.usermodel.HSSFFont;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.hssf.util.HSSFColor;
@@ -209,7 +208,7 @@ public class ParseExcel {
                         } else if ("General".equals(dataFormat)) {
                             value = nf.format(cell.getNumericCellValue());
                         } else {
-                            value = sdf.format(HSSFDateUtil.getJavaDate(cell.getNumericCellValue()));
+                            value = sdf.format(DateUtil.getJavaDate(cell.getNumericCellValue()));
                         }
 
                         break;

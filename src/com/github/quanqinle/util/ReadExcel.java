@@ -12,10 +12,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 读取excel，并将行数据按照对象存储
@@ -48,20 +45,11 @@ public class ReadExcel {
             }
             Sheet sheet = workbook.getSheetAt(sn);
             System.out.println("Sheet #" + sn + " : " + sheet.getSheetName());
-            if (sheet == null) { // skip empty sheet
-                System.out.println("This is a empty Sheet");
-                continue;
-            }
 
             for (Row row : sheet) {
                 int rowNum = row.getRowNum(); // current row num, from 0
 //                LogUtil.info( "Row " + row.getRowNum() );
                 System.out.println("Row " + rowNum);
-
-                if (row == null) { // skip empty row
-                    System.out.println("This is a empty row");
-                    continue;
-                }
 
                 if (0 == rowNum) {
                     titleMap = mapCellNameWithIndex(row, headerRowMap);
@@ -77,7 +65,8 @@ public class ReadExcel {
 
                     Field field = fieldMap.get(headerTitle);    //该property在object对象中对应的属性
                     Method method = methodMap.get(headerTitle);  //该property在object对象中对应的setter方法
-                    setObjectPropertyValue(object, field, method, cellValue);
+//                    setObjectPropertyValue(object, field, method, cellValue);
+                    setObjectPropertyValueByCell(object, field, method, cell);
 
                     System.out.println("cell[" + cellIndex + "] = " + cellValue);
                 }
@@ -183,6 +172,22 @@ public class ReadExcel {
         }
     }
 
+    private static void setObjectPropertyValueByCell(Object obj, Field field, Method method, Cell cell) throws Exception {
+        String type = field.getType().getName();
+        if (("java.util.Date".equals(type) || "Date".equals(type)) && DateUtil.isCellDateFormatted(cell)) {
+            Object[] oo = new Object[1];
+            Date date = cell.getDateCellValue();
+            oo[0] = date;
+            try {
+                method.invoke(obj, oo);
+            } catch (Exception e) {
+                e.printStackTrace();
+                throw e;
+            }
+        } else {
+            setObjectPropertyValue(obj, field, method, getValue(cell));
+        }
+    }
     /**
      * 根据指定属性的的setter方法给object对象设置值
      *
@@ -196,7 +201,6 @@ public class ReadExcel {
         Object[] oo = new Object[1];
 
         String type = field.getType().getName();
-        System.out.println("Date : " + value);
         if ("java.lang.String".equals(type) || "String".equals(type)) {
             oo[0] = value;
         } else if ("java.lang.Integer".equals(type) || "java.lang.int".equals(type) || "Integer".equals(type) || "int".equals(type)) {
@@ -229,9 +233,11 @@ public class ReadExcel {
             if (value.length() > 0)
                 oo[0] = Long.valueOf(value);
         }
+
         try {
             method.invoke(obj, oo);
         } catch (Exception e) {
+            System.out.println("value Wrong");
             e.printStackTrace();
             throw e;
         }
