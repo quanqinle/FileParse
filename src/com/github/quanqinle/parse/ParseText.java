@@ -92,10 +92,4 @@ public class ParseText {
         return line + " ";
     }
 
-    private static String trimStartSpace(String textContent) {
-        while (textContent.startsWith("　")) {
-            textContent = textContent.substring(1, textContent.length()).trim();
-        }
-        return textContent;
-    }
 }

@@ -48,27 +48,23 @@ public class ReadExcel {
 
             for (Row row : sheet) {
                 int rowNum = row.getRowNum(); // current row num, from 0
-//                LogUtil.info( "Row " + row.getRowNum() );
-                System.out.println("Row " + rowNum);
+                LogUtil.info( "Row " + rowNum );
 
                 if (0 == rowNum) {
                     titleMap = mapCellNameWithIndex(row, headerRowMap);
-                    System.out.println("Header Row : " + titleMap.toString());
+                    LogUtil.info("Header Row : " + titleMap.toString());
                     continue;
                 }
 
                 Object object = obj.newInstance();
                 for (Cell cell : row) {
-                    String cellValue = getValue(cell);
+//                    String cellValue = getValue(cell);
                     int cellIndex = cell.getColumnIndex();
                     String headerTitle = titleMap.get(cellIndex);
 
                     Field field = fieldMap.get(headerTitle);    //该property在object对象中对应的属性
                     Method method = methodMap.get(headerTitle);  //该property在object对象中对应的setter方法
-//                    setObjectPropertyValue(object, field, method, cellValue);
                     setObjectPropertyValueByCell(object, field, method, cell);
-
-                    System.out.println("cell[" + cellIndex + "] = " + cellValue);
                 }
 
                 resultList.add(object);
@@ -172,75 +168,70 @@ public class ReadExcel {
         }
     }
 
-    private static void setObjectPropertyValueByCell(Object obj, Field field, Method method, Cell cell) throws Exception {
-        String type = field.getType().getName();
-        if (("java.util.Date".equals(type) || "Date".equals(type)) && DateUtil.isCellDateFormatted(cell)) {
-            Object[] oo = new Object[1];
-            Date date = cell.getDateCellValue();
-            oo[0] = date;
-            try {
-                method.invoke(obj, oo);
-            } catch (Exception e) {
-                e.printStackTrace();
-                throw e;
-            }
-        } else {
-            setObjectPropertyValue(obj, field, method, getValue(cell));
-        }
-    }
     /**
      * 根据指定属性的的setter方法给object对象设置值
-     *
      * @param obj    object对象
      * @param field  object对象的属性
      * @param method object对象属性的相对应的方法
-     * @param value  需要设置的值
+     * @param cell  单元格
      * @throws Exception 异常
      */
-    private static void setObjectPropertyValue(Object obj, Field field, Method method, String value) throws Exception {
+    private static void setObjectPropertyValueByCell(Object obj, Field field, Method method, Cell cell) throws Exception {
         Object[] oo = new Object[1];
-
         String type = field.getType().getName();
-        if ("java.lang.String".equals(type) || "String".equals(type)) {
-            oo[0] = value;
-        } else if ("java.lang.Integer".equals(type) || "java.lang.int".equals(type) || "Integer".equals(type) || "int".equals(type)) {
-            if (value.length() > 0)
-                oo[0] = Integer.valueOf(value);
-        } else if ("java.lang.Float".equals(type) || "java.lang.float".equals(type) || "Float".equals(type) || "float".equals(type)) {
-            if (value.length() > 0)
-                oo[0] = Float.valueOf(value);
-        } else if ("java.lang.Double".equals(type) || "java.lang.double".equals(type) || "Double".equals(type) || "double".equals(type)) {
-            if (value.length() > 0)
-                oo[0] = Double.valueOf(value);
-        } else if ("java.math.BigDecimal".equals(type) || "BigDecimal".equals(type)) {
-            if (value.length() > 0)
-                oo[0] = new BigDecimal(value);
-        } else if ("java.util.Date".equals(type) || "Date".equals(type)) {
-            if (value.length() > 0) {//当长度为19(yyyy-MM-dd HH24:mm:ss)或者为14(yyyyMMddHH24mmss)时Date格式转换为yyyyMMddHH24mmss
-                if (value.length() == 19 || value.length() == 14) {
-                    oo[0] = DateUtils.string2Date(value, "yyyyMMddHH24mmss");
-                } else {     //其余全部转换为yyyyMMdd格式
-                    oo[0] = DateUtils.string2Date(value, "yyyyMMdd");
-                }
-            }
-        } else if ("java.sql.Timestamp".equals(type)) {
-            if (value.length() > 0)
-                oo[0] = DateFormatUtils.formatDate(value, "yyyyMMddHH24mmss");
-        } else if ("java.lang.Boolean".equals(type) || "Boolean".equals(type)) {
-            if (value.length() > 0)
-                oo[0] = Boolean.valueOf(value);
-        } else if ("java.lang.Long".equals(type) || "java.lang.long".equals(type) || "Long".equals(type) || "long".equals(type)) {
-            if (value.length() > 0)
-                oo[0] = Long.valueOf(value);
+        if (("java.util.Date".equals(type) || "Date".equals(type)) && DateUtil.isCellDateFormatted(cell)) {
+            Date date = cell.getDateCellValue();
+            oo[0] = date;
+        } else {
+            oo[0] = transformValueToField(type, getValue(cell));
         }
 
         try {
             method.invoke(obj, oo);
         } catch (Exception e) {
-            System.out.println("value Wrong");
+            System.out.println("Wrong value");
             e.printStackTrace();
             throw e;
         }
+    }
+
+    /**
+     * 单元格value转为obj field值
+     * @param type object的变量类型
+     * @param value 单元格值
+     * @return object的变量值
+     */
+    private static Object transformValueToField(String type, String value) {
+        Object oo;
+        if (value.length() <= 0) {
+            oo = value;
+        } else if ("java.lang.String".equals(type) || "String".equals(type)) {
+            oo = value;
+        } else if ("java.lang.Integer".equals(type) || "java.lang.int".equals(type) || "Integer".equals(type) || "int".equals(type)) {
+            oo = Integer.valueOf(value);
+        } else if ("java.lang.Float".equals(type) || "java.lang.float".equals(type) || "Float".equals(type) || "float".equals(type)) {
+            oo = Float.valueOf(value);
+        } else if ("java.lang.Double".equals(type) || "java.lang.double".equals(type) || "Double".equals(type) || "double".equals(type)) {
+            oo = Double.valueOf(value);
+        } else if ("java.math.BigDecimal".equals(type) || "BigDecimal".equals(type)) {
+            oo = new BigDecimal(value);
+        } else if ("java.util.Date".equals(type) || "Date".equals(type)) {
+            //当长度为19(yyyy-MM-dd HH24:mm:ss)或者为14(yyyyMMddHH24mmss)时Date格式转换为yyyyMMddHH24mmss
+            if (value.length() == 19 || value.length() == 14) {
+                oo = DateUtils.string2Date(value, "yyyyMMddHH24mmss");
+            } else {     //其余全部转换为yyyyMMdd格式
+                oo = DateUtils.string2Date(value, "yyyyMMdd");
+            }
+        } else if ("java.sql.Timestamp".equals(type)) {
+            oo = DateFormatUtils.formatDate(value, "yyyyMMddHH24mmss");
+        } else if ("java.lang.Boolean".equals(type) || "Boolean".equals(type)) {
+            oo = Boolean.valueOf(value);
+        } else if ("java.lang.Long".equals(type) || "java.lang.long".equals(type) || "Long".equals(type) || "long".equals(type)) {
+            oo = Long.valueOf(value);
+        } else {
+            oo = value;
+        }
+        return oo;
     }
 
 }

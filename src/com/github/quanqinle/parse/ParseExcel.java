@@ -10,6 +10,7 @@ import java.util.List;
 
 import com.github.quanqinle.entity.excelentity.ExcelDemo;
 import com.github.quanqinle.util.Constant;
+import com.github.quanqinle.util.LogUtil;
 import com.github.quanqinle.util.ReadExcel;
 import org.apache.poi.hssf.usermodel.HSSFFont;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -29,11 +30,11 @@ public class ParseExcel {
 
     public static void main(String[] args) {
         String filePath = String.join(File.separator, Constant.RAW_FILE_DIR, "demo.xlsx");
-
+        LogUtil.info("debug!");
         System.out.println("---- method readExcel2Obj() ----");
         readExcel2Obj(filePath);
 
-/*        System.out.println("---- method officialExample() ----");
+        System.out.println("---- method officialExample() ----");
         officialExample(filePath);
 
         try {
@@ -44,7 +45,7 @@ public class ParseExcel {
             }
         } catch (Exception e) {
 
-        }*/
+        }
 
     }
 
@@ -60,14 +61,7 @@ public class ParseExcel {
 
             for (int i = 0; i <= list.size(); i++) {
                 ExcelDemo demo = (ExcelDemo) list.get(i);
-//                System.out.println("row:" + i + " content:" + demo.toString());
-                System.out.print(demo.getId() + " ");
-                System.out.print(demo.getName() + " ");
-                System.out.print(demo.getAge() + " ");
-                System.out.print(demo.getBirthday() + " ");
-                System.out.print(demo.getSalary() + " ");
-                System.out.print(demo.getHappy() + " ");
-                System.out.println(demo.getCreateTime());
+                System.out.println("row:" + i + "\n\tcontent:" + demo.toString());
             }
         } catch (Exception e) {
         }

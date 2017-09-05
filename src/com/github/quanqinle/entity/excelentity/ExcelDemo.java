@@ -101,7 +101,7 @@ public class ExcelDemo {
 
     @Override
     public String toString() {
-        return String.join(", ", String.valueOf(this.getId()), this.getName(), String.valueOf(this.getAge()), this.getBirthday().toString(), String.valueOf(this.getSalary()), this.getHappy(), this.getCreateTime().toString());
+        return String.join(", ", String.valueOf(this.getId()), this.getName(), String.valueOf(this.getAge()), this.getBirthday().toString(), String.valueOf(this.getSalary()), this.getHappy(), this.getCreateTime().toString(), this.getBedTime().toString());
     }
 
 }

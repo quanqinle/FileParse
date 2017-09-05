@@ -2,7 +2,6 @@ package com.github.quanqinle.util;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-//import org.apache.log4j.Logger;
 
 /**
  * 日志输出代理类。
@@ -76,13 +75,8 @@ public class LogUtil {
 //        logger = Logger.getLogger("");  // log4j 1.x
         logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME); // log4j 2.x
     }
-
-    /**
-     * 测试
-     *
-     * @param args
-     */
-    public static void main(String args[]) {
+    
+    public static void main(String[] args) {
         LogUtil.info("调试信息");
     }
 
