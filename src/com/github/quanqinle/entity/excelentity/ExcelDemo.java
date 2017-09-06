@@ -15,18 +15,10 @@ public class ExcelDemo {
     private double salary;
     private String happy;
     private Date createTime;
-
-    public Date getBedTime() {
-        return bedTime;
-    }
-
-    public void setBedTime(Date bedTime) {
-        this.bedTime = bedTime;
-    }
-
     private Date bedTime;
 
     private static final Map<String, String> headerRow;
+
     static { // 不限大小写
         headerRow = new HashMap<>();
         headerRow.put("id", "id");
@@ -99,9 +91,17 @@ public class ExcelDemo {
         this.createTime = createTime;
     }
 
+    public Date getBedTime() {
+        return bedTime;
+    }
+
+    public void setBedTime(Date bedTime) {
+        this.bedTime = bedTime;
+    }
+
     @Override
     public String toString() {
-        return String.join(", ", String.valueOf(this.getId()), this.getName(), String.valueOf(this.getAge()), this.getBirthday().toString(), String.valueOf(this.getSalary()), this.getHappy(), this.getCreateTime().toString(), this.getBedTime().toString());
+        return String.join(", ", String.valueOf(this.getId()), this.getName(), String.valueOf(this.getAge()), String.valueOf(this.getBirthday()), String.valueOf(this.getSalary()), this.getHappy(), String.valueOf(this.getCreateTime()), String.valueOf(this.getBedTime()));
     }
 
 }

@@ -44,11 +44,11 @@ public class ReadExcel {
                 break;
             }
             Sheet sheet = workbook.getSheetAt(sn);
-            System.out.println("Sheet #" + sn + " : " + sheet.getSheetName());
+            LogUtil.debug("Sheet #" + sn + " : " + sheet.getSheetName());
 
             for (Row row : sheet) {
                 int rowNum = row.getRowNum(); // current row num, from 0
-                LogUtil.info( "Row " + rowNum );
+                LogUtil.debug( "Row " + rowNum );
 
                 if (0 == rowNum) {
                     titleMap = mapCellNameWithIndex(row, headerRowMap);

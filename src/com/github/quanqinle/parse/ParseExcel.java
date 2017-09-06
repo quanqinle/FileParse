@@ -30,11 +30,10 @@ public class ParseExcel {
 
     public static void main(String[] args) {
         String filePath = String.join(File.separator, Constant.RAW_FILE_DIR, "demo.xlsx");
-        LogUtil.info("debug!");
-        System.out.println("---- method readExcel2Obj() ----");
+        LogUtil.info("---- method readExcel2Obj() ----");
         readExcel2Obj(filePath);
 
-        System.out.println("---- method officialExample() ----");
+        LogUtil.info("---- method officialExample() ----");
         officialExample(filePath);
 
         try {
@@ -57,11 +56,11 @@ public class ParseExcel {
     private static void readExcel2Obj(String filePath) {
         try {
             List<Object> list = ReadExcel.excelRead(filePath, ExcelDemo.class, ExcelDemo.getHeaderRow());
-            System.out.println("\n\nrow size=" + list.size());
+            LogUtil.info("row size=" + list.size());
 
             for (int i = 0; i <= list.size(); i++) {
                 ExcelDemo demo = (ExcelDemo) list.get(i);
-                System.out.println("row:" + i + "\n\tcontent:" + demo.toString());
+                LogUtil.info("row[" + i + "] content:" + demo.toString());
             }
         } catch (Exception e) {
         }
@@ -80,7 +79,7 @@ public class ParseExcel {
         try {
             workbook = WorkbookFactory.create(new File(filePath));
         } catch (Exception e) {
-            System.out.println("fail to open excel");
+            LogUtil.info("fail to open excel");
             return;
         }
 

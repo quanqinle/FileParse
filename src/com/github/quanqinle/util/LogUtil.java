@@ -63,10 +63,6 @@ public class LogUtil {
      * 默认输出日志的日志工具：log4j
      */
     private static Logger logger = null;
-
-    public LogUtil() {
-    }
-
     static {
         // 可以单独指定log4j的配置文件，也可以使用默认。
         // org.apache.log4j.PropertyConfigurator.configure("log4j.properties");
@@ -75,7 +71,10 @@ public class LogUtil {
 //        logger = Logger.getLogger("");  // log4j 1.x
         logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME); // log4j 2.x
     }
-    
+
+    private LogUtil() {
+    }
+
     public static void main(String[] args) {
         LogUtil.info("调试信息");
     }
