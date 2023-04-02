@@ -1,4 +1,0 @@
-[submodule "JavaUtils"]
-	path = JavaUtils
-	url = https://github.com/quanqinle/JavaUtils.git
-	branch = master
