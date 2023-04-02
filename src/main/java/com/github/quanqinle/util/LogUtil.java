@@ -1,7 +1,7 @@
 package com.github.quanqinle.util;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 日志输出代理类。
@@ -62,15 +62,8 @@ public class LogUtil {
     /**
      * 默认输出日志的日志工具：log4j
      */
-    private static Logger logger = null;
-    static {
-        // 可以单独指定log4j的配置文件，也可以使用默认。
-        // org.apache.log4j.PropertyConfigurator.configure("log4j.properties");
-        // 得到logger实例，作为输出工具。
-        // 此句作用是用一个输出实例，取代每个类里面的： Logger.getLogger(X.class)
-//        logger = Logger.getLogger("");  // log4j 1.x
-        logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME); // log4j 2.x
-    }
+    public static final Logger logger = LoggerFactory.getLogger(LogUtil.class);
+
 
     private LogUtil() {
     }
@@ -92,7 +85,7 @@ public class LogUtil {
      *                <p>
      *                如果不需要输出源代码信息，则只需将静态成员属性 showLocSrc设为false即可。
      */
-    private static void log(int level, Object message, StackTraceElement[] ste) {
+    private static void log(int level, String message, StackTraceElement[] ste) {
         if (ste != null) {
             // 加入源代码定位
             message = getStackMsg(ste) + msgSplit + message;// fixme todo
@@ -152,7 +145,7 @@ public class LogUtil {
      *
      * @param message
      */
-    public static void info(Object message) {
+    public static void info(String message) {
         // 如果禁止日志或者输出级别不符，则返回。
         if (!enabled || info < level)
             return;
@@ -168,7 +161,7 @@ public class LogUtil {
      *
      * @param message
      */
-    public static void debug(Object message) {
+    public static void debug(String message) {
         // 如果禁止日志或者输出级别不符，则返回。
         if (!enabled || debug < level)
             return;
@@ -184,7 +177,7 @@ public class LogUtil {
      *
      * @param message
      */
-    public static void warn(Object message) {
+    public static void warn(String message) {
         // 如果禁止日志或者输出级别不符，则返回。
         if (!enabled || warn < level)
             return;
@@ -200,7 +193,7 @@ public class LogUtil {
      *
      * @param message
      */
-    public static void error(Object message) {
+    public static void error(String message) {
         // 如果禁止日志或者输出级别不符，则返回。
         if (!enabled || error < level)
             return;

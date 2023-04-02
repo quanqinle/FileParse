@@ -3,7 +3,7 @@ package com.github.quanqinle.parse;
 import com.github.quanqinle.util.Constant;
 import com.github.quanqinle.util.FileIOUtils;
 import com.github.quanqinle.util.RegexUtils;
-import com.google.common.base.Strings;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
 import java.io.File;
@@ -19,7 +19,7 @@ public class ParseText {
 
     public static void main(String[] args) {
         String newFilePath = String.join(File.separator, Constant.RAW_FILE_DIR, "Thirteen Reasons Why-3.txt");
-        FileIOUtils.writeFileFromString(newFilePath, trimTrailings("Thirteen Reasons Why.txt"));
+        FileIOUtils.writeFileFromString(newFilePath, trimTrailing("Thirteen Reasons Why.txt"));
     }
 
     /**
@@ -27,12 +27,12 @@ public class ParseText {
      *
      * @param filename
      */
-    public static String trimTrailings(String filename) {
+    public static String trimTrailing(String filename) {
         String file = String.join(File.separator, Constant.RAW_FILE_DIR, filename);
         List<String> strs = FileIOUtils.readFile2List(file);
         String strResult = "";
         for (String line : strs) {
-            if (!Strings.isNullOrEmpty(line)) {
+            if (!StringUtils.isBlank(line)) {
                 line = line.trim();
 
                 if (isPageHeaderFooter(line)) {

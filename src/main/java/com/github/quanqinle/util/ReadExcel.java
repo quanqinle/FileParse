@@ -1,7 +1,7 @@
 package com.github.quanqinle.util;
 
-import com.google.common.base.Strings;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+//import com.google.common.base.Strings;
+import org.apache.commons.lang3.StringUtils;import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.NumberToTextConverter;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -65,7 +65,7 @@ public class ReadExcel {
 					continue;
 				}
 
-				Object object = clazz.newInstance();
+				Object object = clazz.getDeclaredConstructor().newInstance();
 				for (Cell cell : row) {
 					// String cellValue = getValue(cell);
 					int cellIndex = cell.getColumnIndex();
@@ -108,7 +108,7 @@ public class ReadExcel {
 			int index = cell.getColumnIndex();
 			String val = cell.getStringCellValue();
 
-			if (Strings.isNullOrEmpty(val)) {
+			if (StringUtils.isBlank(val)) {
 				LogUtil.error("bad style on header row, cell index:" + index);
 			}
 			val = val.trim().toLowerCase();
@@ -186,7 +186,7 @@ public class ReadExcel {
 	/**
 	 * 读取cell值，以string类型返回
 	 *
-	 * @param cell单元格
+	 * @param cell 单元格
 	 * @return 单元格里的值
 	 */
 	private static String getValue_new(Cell cell) {

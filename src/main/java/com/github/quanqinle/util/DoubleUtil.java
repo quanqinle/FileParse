@@ -1,6 +1,6 @@
 package com.github.quanqinle.util;
 
-import java.math.BigDecimal;
+import java.math.BigDecimal;import java.math.RoundingMode;
 
 /**
  * Double数据的操作
@@ -105,7 +105,7 @@ public class DoubleUtil {
 	public static double mul(double v1, double v2, int scale) {
 		BigDecimal b1 = new BigDecimal(Double.toString(v1));
 		BigDecimal b2 = new BigDecimal(Double.toString(v2));
-		return b1.multiply(b2).setScale(scale, BigDecimal.ROUND_HALF_UP).doubleValue();
+		return b1.multiply(b2).setScale(scale, RoundingMode.HALF_UP).doubleValue();
 	}
 
 	/**
@@ -142,6 +142,6 @@ public class DoubleUtil {
 		 * ROUND_HALF_UP: 遇到.5的情况时往上近似,例: 1.5 ->2;
 		 * ROUND_HALF_DOWN : 遇到.5的情况时往下近似,例: 1.5->1;
 		 */
-		return b1.divide(b2, scale, BigDecimal.ROUND_HALF_UP).doubleValue();
+		return b1.divide(b2, scale, RoundingMode.HALF_UP).doubleValue();
 	}
 }

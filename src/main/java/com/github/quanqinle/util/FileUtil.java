@@ -19,7 +19,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.Reader;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;import java.util.List;
 
 /**
  * 文件操作
@@ -186,7 +186,7 @@ public class FileUtil {
                 LogUtil.info("所删除的文件不存在！" + '\n');
             }
         } catch (Exception e) {
-            LogUtil.info(e.getStackTrace());
+            LogUtil.info(Arrays.toString(e.getStackTrace()));
         }
         LogUtil.info("End Delete File!" + file.getName());
         return;

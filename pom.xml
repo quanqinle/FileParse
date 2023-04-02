@@ -26,6 +26,16 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.5</version>
         </dependency>
+
+        <!-- slf4j -->
+        <!-- It'll pull implicitly slf4j-api.jar / logback-core.jar in as well. -->
+        <!-- Note: explicitly declaring a dependency on the two is not wrong. -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.4.6</version>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-csv</artifactId>
